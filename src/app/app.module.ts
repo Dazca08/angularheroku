@@ -104,7 +104,7 @@ import { ServicioUService } from './componentes/Usuarios/servicio-u.service';
     CalendarModule,
     ReactiveFormsModule,
     HttpClientModule,
-     HttpModule
+     //HttpModule
   ],
   providers: [ ServicioEventoService , ServicioInfoService , 
   ServicioAdminService,ServiciologinService
