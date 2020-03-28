@@ -44,7 +44,7 @@ usuarios: Usuarios[];
   guardar({value, valid}: {value:Usuarios, valid: boolean}){
    
    
-      value.id = this.id;
+      value.Id = this.id;
       
    this.servi.update(value,this.id);  
       //this.route.navigate(['/']);
