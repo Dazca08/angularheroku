@@ -35,7 +35,7 @@
 <div class="card-body">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" class="form-control" #nombre="ngModel" [(ngModel)]="usuario.nombre"
+                <input type="text" name="nombre" class="form-control" #nombre="ngModel" [(ngModel)]="usuario.Nombre"
                   [ngClass]="{'is-invalid': nombre.errors && nombre.touched}" required minlength="2">
                 <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
                   Nombre requerido
@@ -47,7 +47,7 @@
 
                 <div class="form-group">
                 <label for="apellido">apellido</label>
-                <input type="text" name="apellido" class="form-control" #apellido="ngModel" [(ngModel)]="usuario.apellido"
+                <input type="text" name="apellido" class="form-control" #apellido="ngModel" [(ngModel)]="usuario.Apellido"
                   [ngClass]="{'is-invalid': apellido.errors && apellido.touched}" required minlength="2">
                 <div [hidden]="!apellido.errors?.required" class="invalid-feedback">
                   apellido requerido
@@ -67,7 +67,7 @@
                 <div [hidden]="!tipoDocumento.errors?.minlength" class="invalid-feedback">
                   Debe contener al menos 2 caracteres
                 </div>-->
-                <select name="tipoDocumento" class="form-control" #tipoDocumento="ngModel" [(ngModel)]="usuario.tipoDocumento"  >
+                <select name="tipoDocumento" class="form-control" #tipoDocumento="ngModel" [(ngModel)]="usuario.TipoDocumento"  >
         <option selected>CC</option>
         <option>CE</option>
         <option>TI</option>
@@ -77,7 +77,7 @@
 
                 <div class="form-group">
                 <label for="numeroDocumento">numeroDocumento</label>
-                <input type="text" name="numeroDocumento" class="form-control" #numeroDocumento="ngModel" [(ngModel)]="usuario.numeroDocumento"
+                <input type="text" name="numeroDocumento" class="form-control" #numeroDocumento="ngModel" [(ngModel)]="usuario.NumeroDocumento"
                   [ngClass]="{'is-invalid': numeroDocumento.errors && numeroDocumento.touched}" required minlength="2">
                 <div [hidden]="!numeroDocumento.errors?.required" class="invalid-feedback">
                   numeroDocumento requerido
@@ -89,7 +89,7 @@
 
                 <div class="form-group">
                 <label for="lugarExpedicion">lugarExpedicion</label>
-                <input type="text" name="lugarExpedicion" class="form-control" #lugarExpedicion="ngModel" [(ngModel)]="usuario.lugarExpedicion"
+                <input type="text" name="lugarExpedicion" class="form-control" #lugarExpedicion="ngModel" [(ngModel)]="usuario.LugarExpedicion"
                   [ngClass]="{'is-invalid': lugarExpedicion.errors && lugarExpedicion.touched}" required minlength="2">
                 <div [hidden]="!lugarExpedicion.errors?.required" class="invalid-feedback">
                  lugarExpedicion requerido
@@ -101,7 +101,7 @@
 
                 <div class="form-group">
                 <label for="correoElectronico">correoElectronico</label>
-                <input type="text" name="correoElectronico" class="form-control" #correoElectronico="ngModel" [(ngModel)]="usuario.correoElectronico"
+                <input type="text" name="correoElectronico" class="form-control" #correoElectronico="ngModel" [(ngModel)]="usuario.CorreoElectronico"
                   [ngClass]="{'is-invalid': correoElectronico.errors && correoElectronico.touched}" required minlength="2">
                 <div [hidden]="!correoElectronico.errors?.required" class="invalid-feedback">
                   correoElectronico requerido
@@ -113,7 +113,7 @@
 
                 <div class="form-group">
                 <label for="clave">clave</label>
-                <input type="text" name="clave" class="form-control" #clave="ngModel" [(ngModel)]="usuario.clave"
+                <input type="text" name="clave" class="form-control" #clave="ngModel" [(ngModel)]="usuario.Clave"
                   [ngClass]="{'is-invalid': clave.errors && clave.touched}" required minlength="2">
                 <div [hidden]="!clave.errors?.required" class="invalid-feedback">
                   clave requerido
@@ -125,7 +125,7 @@
 
                 <div class="form-group">
                 <label for="icono_url">icono_url</label>
-                <input type="text" name="icono_url" class="form-control" #icono_url="ngModel" [(ngModel)]="usuario.icono_url"
+                <input type="text" name="icono_url" class="form-control" #icono_url="ngModel" [(ngModel)]="usuario.Icono_url"
                   [ngClass]="{'is-invalid': icono_url.errors && icono_url.touched}" required minlength="2">
                 <div [hidden]="!icono_url.errors?.required" class="invalid-feedback">
                   icono_url requerido
@@ -137,7 +137,7 @@
 
                 <div class="form-group">
                 <label for="verificacionCuenta">verificacionCuenta</label>
-                <input type="text" name="verificacionCuenta" class="form-control" #verificacionCuenta="ngModel" [(ngModel)]="usuario.verificacionCuenta"
+                <input type="text" name="verificacionCuenta" class="form-control" #verificacionCuenta="ngModel" [(ngModel)]="usuario.VerificacionCuenta"
                   [ngClass]="{'is-invalid': verificacionCuenta.errors && verificacionCuenta.touched}" required minlength="2">
                 <div [hidden]="!verificacionCuenta.errors?.required" class="invalid-feedback">
                   verificacionCuenta requerido
@@ -149,7 +149,7 @@
 
                 <div class="form-group">
                 <label for=" estadoCuenta"> estadoCuenta</label>
-                <input type="text" name="estadoCuenta" class="form-control" #estadoCuenta="ngModel" [(ngModel)]="usuario.estadoCuenta"
+                <input type="text" name="estadoCuenta" class="form-control" #estadoCuenta="ngModel" [(ngModel)]="usuario.EstadoCuenta"
                   [ngClass]="{'is-invalid':  estadoCuenta.errors &&  estadoCuenta.touched}" required minlength="2">
                 <div [hidden]="! estadoCuenta.errors?.required" class="invalid-feedback">
                    estadoCuenta requerido
@@ -161,7 +161,7 @@
 
                 <div class="form-group">
                 <label for="rolId">rolId</label>
-                <input type="text" name="rolId" class="form-control" #rolId="ngModel" [(ngModel)]="usuario.rolId"
+                <input type="text" name="rolId" class="form-control" #rolId="ngModel" [(ngModel)]="usuario.RolId"
                   [ngClass]="{'is-invalid': rolId.errors && rolId.touched}" >
                 <div [hidden]="!rolId.errors?.required" class="invalid-feedback">
                   rolId requerido

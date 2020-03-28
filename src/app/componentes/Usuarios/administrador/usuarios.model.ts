@@ -1,18 +1,18 @@
 export interface Usuarios{
     
     Id?:string;
-    nombre?:string;
-    apellido?:string;
-    tipoDocumento?:string;
-    numeroDocumento?:string;
-    lugarExpedicion?:string;
-    correoElectronico?:string;
-    clave?:string;
-    icono_url?:string;
-    verificacionCuenta?:string;
-    estadoCuenta?:string;
-   rolId?:string;
-    rolNombre?:string;
-    imagen_documento?:string;
+    Nombre?:string;
+    Apellido?:string;
+    TipoDocumento?:string;
+    NumeroDocumento?:string;
+    LugarExpedicion?:string;
+    CorreoElectronico?:string;
+    Clave?:string;
+    Icono_url?:string;
+    VerificacionCuenta?:string;
+    EstadoCuenta?:string;
+   RolId?:string;
+    //rolNombre?:string;
+    Imagen_documento?:string;
   
 }

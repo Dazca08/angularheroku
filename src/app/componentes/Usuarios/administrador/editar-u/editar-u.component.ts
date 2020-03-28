@@ -12,19 +12,19 @@ export class EditarUComponent implements OnInit {
    id:string;
 usuarios: Usuarios[];
   usuario: Usuarios ={
-    nombre: '',
-    apellido: '',
-     tipoDocumento: '',
-   numeroDocumento: '',
-    lugarExpedicion: '',
-   correoElectronico: '',
-      clave: '',
-    icono_url: '',
-    verificacionCuenta: '',
-    estadoCuenta: '',
-   rolId: '',
-      rolNombre: '',
-    imagen_documento: '',
+    Nombre: '',
+    Apellido: '',
+     TipoDocumento: '',
+   NumeroDocumento: '',
+    LugarExpedicion: '',
+   CorreoElectronico: '',
+       Clave: '',
+    Icono_url: '',
+   VerificacionCuenta: '',
+    EstadoCuenta: '',
+   RolId: '',
+     
+    Imagen_documento: '',
 
    
   }
