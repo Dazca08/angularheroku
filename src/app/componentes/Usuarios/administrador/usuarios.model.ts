@@ -1,6 +1,6 @@
 export interface Usuarios{
     
-    id?:string;
+    Id?:string;
     nombre?:string;
     apellido?:string;
     tipoDocumento?:string;
