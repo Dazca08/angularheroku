@@ -24,8 +24,8 @@
 		 		<table class="table table-striped">
 		 			<thead class="thead-dark">
 		 				<tr>
-		 					<th>opcion</th>
-		 					<th>#</th>
+		 					<th>editar</th>
+		 					<th>eliminar</th>
 		 				   <th>Nombre</th>
 		 				    <th>FechaPublicacion</th>
 		 					<th>Fecha</th>
@@ -47,6 +47,13 @@
                    Editar
                   </a>
                 </td>
+                 <td>  <!--<a   (click)="eliminar(usuario.Id)"  class="btn btn-success btn-block" >  eliminar</a>-->
+                	 <form (submit)="eliminar(evento.Id)">
+                	 <button type="submit"  class="btn btn-danger btn-block">
+             Eliminar
+          </button>
+           </form>
+         </td>
 		 				 	<td>{{i+1}}</td>
 		 				 	<td>{{evento.Nombre}}</td>
 		 				 	<td>{{evento.FechaPublicacion}}</td>

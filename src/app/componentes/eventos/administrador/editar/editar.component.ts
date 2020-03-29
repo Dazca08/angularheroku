@@ -49,11 +49,12 @@ eventos: Evento[];
       value.Id = this.id;
       
    this.servi.update(value,this.id);  
+   this.servi.ObtenerJson();
       //this.route.navigate(['/']);
     
   }
 
-  eliminar(){
+  /*eliminar(){
      this.servi.Eliminar(this.id);
      
      this.Router.navigate(['/inicioeventos']);
@@ -63,6 +64,6 @@ eventos: Evento[];
       //this.router.navigate(['/']);
    
 
-}
+}*/
 
 }

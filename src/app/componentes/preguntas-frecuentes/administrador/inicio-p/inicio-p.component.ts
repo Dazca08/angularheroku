@@ -35,5 +35,24 @@ console.log(JSON.stringify(error));
   ngOnInit(): void {
   	this.ObtenerPreguntas();
   }
+   eliminar(id){
+  this.refrescar(id);
+  this.refrescar(id);
+ /*console.log(id);
+     this.servi.Eliminar(id);
+ this.usuarios=this.usuarios.filter(x=>x.Id==id);
+ this.ObtenerUsuarios();
+
+this.Router.navigateByUrl('/iniciou');*/
+}
+refrescar(id){
+   console.log(id);
+     this.servi.Eliminar(id);
+ //this.usuarios=this.usuarios.filter(x=>x.Id==id);
+ this.ObtenerPreguntas();
+  this.ngOnInit();
+
+
+}
 
 }

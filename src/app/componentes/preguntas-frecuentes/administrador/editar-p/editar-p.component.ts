@@ -35,11 +35,12 @@ export class EditarPComponent implements OnInit {
       value.id = this.id;
       
    this.servi.update(value,this.id);  
+    this.servi.ObtenerJson();
       //this.route.navigate(['/']);
     
   }
 
-  eliminar(){
+ /* eliminar(){
      this.servi.Eliminar(this.id);
      
      this.Router.navigate(['/inicioaPf']);
@@ -49,5 +50,5 @@ export class EditarPComponent implements OnInit {
       //this.router.navigate(['/']);
    
 
-}
+}*/
 }

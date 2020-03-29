@@ -23,7 +23,8 @@
 		 		<table class="table table-striped">
 		 			<thead class="thead-dark">
 		 				<tr>
-		 					<th>opcion</th>
+		 					<th>editar</th>
+		 					<th>eliminar</th>
 		 					<th>#</th>
 		 				   <th>nombre</th>
 		 				    <th>capacidad</th>
@@ -46,6 +47,13 @@
                    Editar
                   </a>
                 </td>
+                 <td>  <!--<a   (click)="eliminar(usuario.Id)"  class="btn btn-success btn-block" >  eliminar</a>-->
+                	 <form (submit)="eliminar(cabana.id)">
+                	 <button type="submit"  class="btn btn-danger btn-block">
+             Eliminar
+          </button>
+           </form>
+         </td>
 		 				 	<td>{{i+1}}</td>
 		 				 	<td>{{cabana.nombre}}</td>
 		 				 	<td>{{cabana.capacidad}}</td>

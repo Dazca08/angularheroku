@@ -29,9 +29,15 @@ getu(id):Observable<any>{
   }
 
 async Eliminar(id): Promise<any> {
-    return new Promise((resolve, reject) => {
+  try{
+ return new Promise((resolve, reject) => {
       this.http.delete(this.url+'/'+id).toPromise()
     });
+  }
+  catch(e){
+    console.log("error en bd");
+  }
+   
   }
 
 async insertar(Datos): Promise<any> {

@@ -40,12 +40,13 @@ guardar({value, valid}: {value:Puntosi, valid: boolean}){
    
       value.Id = this.id;
       
-   this.servi.update(value,this.id);  
-      //this.route.navigate(['/']);
+   this.servi.update(value,this.id);
+    this.servi.ObtenerJson();  
+   
     
   }
 
-  eliminar(){
+  /*eliminar(){
      this.servi.Eliminar(this.id);
      
      this.Router.navigate(['/iniciopi']);
@@ -55,5 +56,5 @@ guardar({value, valid}: {value:Puntosi, valid: boolean}){
       //this.router.navigate(['/']);
    
 
-}
+}*/
 }

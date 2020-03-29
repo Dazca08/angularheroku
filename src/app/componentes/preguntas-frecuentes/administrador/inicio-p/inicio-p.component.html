@@ -25,7 +25,8 @@
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
-                <th>opcion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
@@ -39,6 +40,13 @@
                    Editar
                   </a>
                 </td>
+                 <td>  <!--<a   (click)="eliminar(usuario.Id)"  class="btn btn-success btn-block" >  eliminar</a>-->
+                   <form (submit)="eliminar(pregunta.id)">
+                   <button type="submit"  class="btn btn-danger btn-block">
+             Eliminar
+          </button>
+           </form>
+         </td>
                 <td>{{i+1}}</td>
                 <td>{{pregunta.nombre}} </td>
                 <td>{{pregunta.descripcion }}</td>
