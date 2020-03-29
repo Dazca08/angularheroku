@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./inicio-u.component.css']
 })
 export class InicioUComponent implements OnInit {
-  id:string;
+ 
 usuarios: Usuarios[];
   usuario: Usuarios ={
     Nombre: '',
@@ -45,14 +45,10 @@ console.log(JSON.stringify(error));
 
   ngOnInit(): void {
   	this.ObtenerUsuarios();
-      this.id = this.route.snapshot.params['id'];
-      this.servi.getu('/'+this.id).subscribe(resultado =>{
- this.usuario=resultado;
-  
- });
+   
   }
-  eliminar(){
-     this.servi.Eliminar(this.id);
+  eliminar(id){
+     this.servi.Eliminar(id);
      
      this.Router.navigate(['/iniciou']);
    
