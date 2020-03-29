@@ -17,7 +17,7 @@ private url: string = "http://piedrasdeltunjo.tk/Usuarios";
  return this.http.get(this.url)
   }
   
-
+ public itemDeleted:any;
 getu(id):Observable<any>{
   return this.http.get(this.url + id, httpOptions)
   }
@@ -31,6 +31,7 @@ getu(id):Observable<any>{
 async Eliminar(id): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.delete(this.url+'/'+id).toPromise()
+      
     });
   }
 

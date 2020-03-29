@@ -45,7 +45,7 @@ console.log(JSON.stringify(error));
 
   ngOnInit(): void {
   	this.ObtenerUsuarios();
-   
+   this.usuarios=this.usuarios.filter(x=>x.Id !==id)
   }
   eliminar(id){
      this.servi.Eliminar(id);
