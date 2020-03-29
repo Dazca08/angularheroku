@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule , FormsModule }
 import { Usuarios } from '../usuarios.model';
 import { ServicioUService  } from 'src/app/componentes/Usuarios/servicio-u.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from "rxjs/internal/Observable";
+import { interval } from 'rxjs';
+import { switchMap } from 'rxjs/operators'; 
 @Component({
   selector: 'app-inicio-u',
   templateUrl: './inicio-u.component.html',
@@ -12,6 +15,7 @@ export class InicioUComponent implements OnInit {
  
 usuarios: Usuarios[];
   usuario: Usuarios ={
+    Id:'',
     Nombre: '',
     Apellido: '',
      TipoDocumento: '',
@@ -28,10 +32,13 @@ usuarios: Usuarios[];
 
    
   }
+
   constructor(private servi:ServicioUService ,private route: ActivatedRoute,private Router: Router,) {this.ObtenerUsuarios }
  ObtenerUsuarios(){
  this.servi.ObtenerJson().subscribe(resultado =>{
    this.usuarios=resultado;
+  
+   
    
    console.log("Informacion ya tiene resultado");
   
@@ -44,15 +51,29 @@ console.log(JSON.stringify(error));
     
 
   ngOnInit(): void {
+
   	this.ObtenerUsuarios();
   
   }
   eliminar(id){
+  this.refrescar(id);
+  this.refrescar(id);
+ /*console.log(id);
      this.servi.Eliminar(id);
-     
-     this.Router.navigate(['/iniciou']);
+ this.usuarios=this.usuarios.filter(x=>x.Id==id);
+ this.ObtenerUsuarios();
+
+this.Router.navigateByUrl('/iniciou');*/
    
-   
+  
+}
+refrescar(id){
+   console.log(id);
+     this.servi.Eliminar(id);
+ //this.usuarios=this.usuarios.filter(x=>x.Id==id);
+ this.ObtenerUsuarios();
+  this.ngOnInit();
+
 
 }
 

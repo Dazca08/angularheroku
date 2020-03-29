@@ -55,15 +55,20 @@
 		 				</tr>
 		 			</thead>
 		 			<tbody>
-		 				 <tr *ngFor="let usuario of usuarios; let i =index">
+
+		 				 <tr *ngFor="let usuario of usuarios ; let i =index ">
 		 				 	 	 <td>
                   <a routerLink="/editaru/{{usuario.Id}}" class="btn btn-secondary">
                    Editar
                   </a>
                 </td>
-                <td>  <button type="submit"   (click)="eliminar(usuario.Id)" class="btn btn-success btn-block" href="/iniciou">
-             eliminar
-          </button></td>
+                <td>  <!--<a   (click)="eliminar(usuario.Id)"  class="btn btn-success btn-block" >  eliminar</a>-->
+                	 <form (submit)="eliminar(usuario.Id)">
+                	 <button type="submit"  class="btn btn-danger btn-block">
+             Eliminar
+          </button>
+           </form>
+         </td>
 		 				 	<td>{{i+1}}</td>
 		 				 	<td>{{usuario.Nombre}}</td>
 		 				 	<td>{{usuario.Apellido}}</td>

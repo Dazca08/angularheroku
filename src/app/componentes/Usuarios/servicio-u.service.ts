@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject} from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 const httpOptions =
 {
@@ -16,8 +16,11 @@ private url: string = "http://piedrasdeltunjo.tk/Usuarios";
   ObtenerJson():Observable<any>{
  return this.http.get(this.url)
   }
-  
- public itemDeleted:any;
+  private refresh$ =new Subject<void>(); 
+  get Refresh(){
+    return this.refresh$;
+  }
+ 
 getu(id):Observable<any>{
   return this.http.get(this.url + id, httpOptions)
   }
@@ -31,6 +34,7 @@ getu(id):Observable<any>{
 async Eliminar(id): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.delete(this.url+'/'+id).toPromise()
+      console.log("archvio eliminado");
       
     });
   }
