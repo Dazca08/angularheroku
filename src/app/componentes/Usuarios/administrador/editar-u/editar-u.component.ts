@@ -55,10 +55,7 @@ usuarios: Usuarios[];
      this.servi.Eliminar(this.id);
      
      this.Router.navigate(['/iniciou']);
-   this.ngOnInit();
-     //this.route.navigate(['/']);
-      //this.clientesServicio.eliminarCliente(this.cliente);
-      //this.router.navigate(['/']);
+   
    
 
 }

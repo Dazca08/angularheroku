@@ -24,6 +24,7 @@
 		 			<thead class="thead-dark">
 		 				<tr>
 		 					<th>opcion</th>
+		 					<th>eliminar</th>
 		 					<th>#</th>
 		 				   <th>nombre</th>
 		 				    <th>apellido</th>
@@ -60,6 +61,9 @@
                    Editar
                   </a>
                 </td>
+                <td>  <button type="submit"  (click)="eliminar()" class="btn btn-success btn-block">
+             eliminar
+          </button></td>
 		 				 	<td>{{i+1}}</td>
 		 				 	<td>{{usuario.Nombre}}</td>
 		 				 	<td>{{usuario.Apellido}}</td>
