@@ -38,7 +38,11 @@ async Eliminar(id): Promise<any> {
 
 async insertar(Datos): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url , Datos, httpOptions).toPromise()
+      this.http.post(this.url , Datos, httpOptions).toPromise().then(Datos => resolve(Datos),
+             error => reject(error))
+      
+ console.log(resolve);
+ console.log(reject);
     });
   }
 

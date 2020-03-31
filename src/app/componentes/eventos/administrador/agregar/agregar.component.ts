@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+//import { FlashMessagesService } from 'angular2-flash-messages';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Evento } from 'src/app/componentes/eventos/administrador/inicio-a/evento.model';
 import { ServicioEventoService  } from 'src/app/componentes/eventos/servicio-evento.service';
@@ -23,11 +23,16 @@ eventos: Evento[];
 
    
   }
+  @ViewChild("eventoForm") eventoForm: NgForm;
   constructor(private formBuilder: FormBuilder,
       private servi: ServicioEventoService ,
-      Router: Router) { }
+      Router: Router  ) { }
 agregar({value, valid}: {value: Evento, valid: boolean}){
-      this.servi.insertar(value);
+ 
+this.servi.insertar(value);
+
+  
+this.eventoForm.resetForm();
 
   }
 

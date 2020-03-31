@@ -8,6 +8,7 @@ export interface Evento{
     Calificacion?:string;
     ImagenesUrl?:string;
     ComentariosId?:string;
+    
     ListaComentariosEvento?:string;
   
 }
