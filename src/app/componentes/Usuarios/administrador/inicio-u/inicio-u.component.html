@@ -7,20 +7,31 @@
         <h1>
            Inicio Usuarios
         </h1>
+        <div class="form-group">
+		 		<input type="text" class="form-control" name="filterPost" placeholder="Buscar...." [(ngModel)]="filterPost">
+		 	</div>
       </div>
     </div>
   </div>
 </header>
-<section id ="clientes">
-
+<section id ="Usuarios" >
+<div class="container" align="center" >
 		<div class="row">
-		 <div class="col-md-9">
+		 <div class="col-md-12">
 		 	<div class="card">
-		 		<h4>listado de Usuarios</h4>
+		 		<div class="card-header">
+            <h4>Listado de Usuarios</h4>
+
+          </div>
+		 		
 
 		 	</div>
-		 	<div>
-		 		<table class="table table-striped">
+
+		 	<!--<div class="form-group">
+		 		<input type="text" class="form-control" name="filterPost" placeholder="Buscar...." [(ngModel)]="filterPost">
+		 	</div>-->
+		 		<div class="table-responsive ">
+		 		<table class="table  table-bordered"   >
 		 			<thead class="thead-dark">
 		 				<tr>
 		 					<th>editar</th>
@@ -56,7 +67,7 @@
 		 			</thead>
 		 			<tbody>
 
-		 				 <tr *ngFor="let usuario of usuarios ; let i =index ">
+		 				 <tr *ngFor="let usuario of usuarios  |filter:filterPost | paginate:{itemsPerPage :5 , currentPage:PageActual}  ; index as i" >
 		 				 	 	 <td>
                   <a routerLink="/editaru/{{usuario.Id}}" class="btn btn-secondary">
                    Editar
@@ -85,28 +96,30 @@
 		 				 	<!--<td>{{usuario.imagen_documento}}</td>-->
 		 				
 		 				 	
-		 				 
+		 				
 		 				 	
 		 				 </tr>
 		 			</tbody>
 		 		</table>
+		 		<pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
+
 		 	</div>
+		 
+
 		 
 		</div>
 	</div>
-
+</div>
 </section>
-
+<br><br>
 <section>
-	 <div align="center">
-<section id="actions" class="py-6 mb-6 bg-light">
+	
+
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <a class="btn btn-primary" href="/agregaru" role="button">Nuevo Usuario</a>
-        
-      </div>
-    </div>
+        <div align="center">
+	<a class="btn btn-primary" href="/agregaru" role="button">Nuevo Usuario</a>
+</div>
   </div>
-</section>
-</div>   
+
+ 
+

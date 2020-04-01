@@ -32,12 +32,14 @@ usuarios: Usuarios[];
 
    
   }
-
   constructor(private servi:ServicioUService ,private route: ActivatedRoute,private Router: Router,) {this.ObtenerUsuarios }
+ filterPost ='';
+ PageActual:number=1;
  ObtenerUsuarios(){
  this.servi.ObtenerJson().subscribe(resultado =>{
+
    this.usuarios=resultado;
-  
+ // console.log(this.usuarios);
    
    
    console.log("Informacion ya tiene resultado");
@@ -48,10 +50,11 @@ console.log(JSON.stringify(error));
 
  }); 
    }
+    i:number;
     
 
   ngOnInit(): void {
-
+   
   	this.ObtenerUsuarios();
   
   }

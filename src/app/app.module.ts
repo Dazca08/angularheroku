@@ -37,7 +37,7 @@ import { InicioAComponent } from './componentes/eventos/administrador/inicio-a/i
 import { AgregarComponent } from './componentes/eventos/administrador/agregar/agregar.component';
 
 import { EditarComponent } from './componentes/eventos/administrador/editar/editar.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { ServicioLService } from './componentes/preguntas-frecuentes/servicio-l.service';
@@ -61,6 +61,7 @@ import { InicioUComponent } from './componentes/Usuarios/administrador/inicio-u/
 import { EditarUComponent } from './componentes/Usuarios/administrador/editar-u/editar-u.component';
 import { AgregarUComponent } from './componentes/Usuarios/administrador/agregar-u/agregar-u.component';
 import { ServicioUService } from './componentes/Usuarios/servicio-u.service';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
 
@@ -95,6 +96,7 @@ import { ServicioUService } from './componentes/Usuarios/servicio-u.service';
     InicioUComponent,
     EditarUComponent,
     AgregarUComponent,
+    FilterPipe,
 
   ],
   imports: [
@@ -104,6 +106,7 @@ import { ServicioUService } from './componentes/Usuarios/servicio-u.service';
     CalendarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule
     // FlashMessagesModule
      //HttpModule
   ],
