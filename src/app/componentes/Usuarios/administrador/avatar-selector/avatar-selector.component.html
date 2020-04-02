@@ -1,0 +1,21 @@
+<div row>
+  <div >
+      <h3>Selecciona el icono para el usuario</h3>
+      <div>(haciendo click en el avatar)</div>
+  </div>
+</div
+>
+
+<div>
+<div class="container">
+      <div class="row">
+          <div  *ngFor="let avatar of avatars ; index as i">
+          	<h1>{{i+1}}</h1>
+  	<img class="pick-avatar" class="card-img-top" class="img-fluid" alt="Responsive image"width="70" height="70"
+      [src]="avatar.img | imgServer: 'avatar'"
+      [ngClass]="{ 'pick-avatar-seleccionado': avatar.seleccionado }"
+      (click)="seleccionarAvatar(avatar)"/>
+  </div>
+      </div>
+</div>
+

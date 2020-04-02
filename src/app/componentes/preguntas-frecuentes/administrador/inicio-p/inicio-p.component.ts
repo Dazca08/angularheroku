@@ -18,7 +18,7 @@ preguntas: Pregunta[];
    
   }
     constructor(private servi:ServicioLService) {  this.ObtenerPreguntas}
-
+PageActual:number=1;
 
   ObtenerPreguntas(){
  this.servi.ObtenerJson().subscribe(resultado =>{

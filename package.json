@@ -37,6 +37,7 @@
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^9.10.8",
     "tslib": "^1.10.0",
     "typescript": "~3.7.5",
     "zone.js": "~0.10.2"

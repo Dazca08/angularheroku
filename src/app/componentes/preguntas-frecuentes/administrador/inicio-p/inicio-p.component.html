@@ -22,7 +22,8 @@
           <div class="card-header">
             <h4>Listado de Preguntas Frecuentes</h4>
           </div>
-          <table class="table table-striped">
+          <div class="table-responsive ">
+          <table class="table table-striped table-bordered">
             <thead class="thead-dark">
               <tr>
                 <th>Editar</th>
@@ -30,20 +31,18 @@
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th></th>
+                
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pregunta of preguntas; let i = index">
+              <tr *ngFor="let pregunta of preguntas | paginate:{itemsPerPage :5 , currentPage:PageActual} ; let i = index ">
                  <td>
-                  <a routerLink="/editarpf/{{pregunta.id}}" class="btn btn-secondary">
-                   Editar
+                  <a routerLink="/editarpf/{{pregunta.id}}" class="btn btn-secondary">Editar
                   </a>
                 </td>
                  <td>  <!--<a   (click)="eliminar(usuario.Id)"  class="btn btn-success btn-block" >  eliminar</a>-->
                    <form (submit)="eliminar(pregunta.id)">
-                   <button type="submit"  class="btn btn-danger btn-block">
-             Eliminar
+                   <button type="submit"  class="btn btn-danger btn-block">Eliminar
           </button>
            </form>
          </td>
@@ -54,6 +53,8 @@
               </tr>
             </tbody>
           </table>
+          <pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
+        </div>
         </div>
       </div>
     
@@ -61,15 +62,22 @@
     </div>
   </div>
 </section>
+<br><br>
+ <div class="container">
+        <div align="center">
+  <a class="btn btn-primary" href="/agregarpf" role="button">Nueva Pregunta</a>
+</div>
+  </div>
+  <!--
 <div align="center">
 <section id="actions" class="py-6 mb-6 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <a class="btn btn-primary" href="/agregarpf" role="button">Agregar</a>
+        
         
       </div>
     </div>
   </div>
 </section>
-</div>
+</div>-->

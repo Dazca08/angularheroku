@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from "rxjs/internal/Observable";
 import { interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators'; 
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inicio-u',
   templateUrl: './inicio-u.component.html',
@@ -43,7 +44,7 @@ usuarios: Usuarios[];
    
    
    console.log("Informacion ya tiene resultado");
-  
+  console.log(this.usuarios.length)
  },
  error=>{
 console.log(JSON.stringify(error));
@@ -59,8 +60,28 @@ console.log(JSON.stringify(error));
   
   }
   eliminar(id){
-  this.refrescar(id);
-  this.refrescar(id);
+    Swal.fire({
+  title: 'Esta seguro?',
+  text: "Al eliminar un usuario no se podra recuperar!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Borrar!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+
+      'Borrado!',
+      'El usuario ha sido eliminado.',
+      'success'
+     
+    )
+      this.refrescar(id);
+       this.refrescar(id);
+  }
+})
+
  /*console.log(id);
      this.servi.Eliminar(id);
  this.usuarios=this.usuarios.filter(x=>x.Id==id);

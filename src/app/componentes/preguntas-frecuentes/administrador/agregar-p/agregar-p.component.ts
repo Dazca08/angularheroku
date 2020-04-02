@@ -19,14 +19,9 @@ preguntas: Pregunta[];
       private servi: ServicioLService,
       Router: Router,
        ) { }
-agregar({value, valid}: {value: Pregunta, valid: boolean}){
-   
-    
+agregar({value, valid}: {value: Pregunta, valid: boolean}){ 
       //Agregar el nuevo cliente
       this.servi.insertar(value);
-     
-      
-    
   }
   ngOnInit(): void {
   }

@@ -62,6 +62,9 @@ import { EditarUComponent } from './componentes/Usuarios/administrador/editar-u/
 import { AgregarUComponent } from './componentes/Usuarios/administrador/agregar-u/agregar-u.component';
 import { ServicioUService } from './componentes/Usuarios/servicio-u.service';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AvatarSelectorComponent } from './componentes/Usuarios/administrador/avatar-selector/avatar-selector.component';
+import { ImgServerPipe } from './pipes/img-server.pipe';
+import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
 @NgModule({
   declarations: [
 
@@ -97,6 +100,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     EditarUComponent,
     AgregarUComponent,
     FilterPipe,
+    AvatarSelectorComponent,
+    ImgServerPipe,
+    FiltroCorreoPipe,
 
   ],
   imports: [

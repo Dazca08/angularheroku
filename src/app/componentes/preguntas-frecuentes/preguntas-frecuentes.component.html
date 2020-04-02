@@ -18,25 +18,15 @@
           <div class="card">
             <div class="card-header">
             	   
-     -    <h4>Preguntas Frecuentes</h4>   	    
+      <h4>Preguntas Frecuentes</h4>   	    
 <div class="bd-example">
-  <details>
-    <summary>Pregunta 1</summary>
-    <p>respuesta</p>
+ 
+  
+  <details *ngFor="let pregunta of preguntas; let i = index">
+    <summary>{{pregunta.nombre}}</summary>
+    <p>{{pregunta.descripcion }}</p>
   </details>
 
-  <details>
-    <summary>Pregunta 2</summary>
-    <p>Respuesta</p>
-  </details>
-   <details>
-    <summary>Pregunta 3</summary>
-    <p>respuesta</p>
-  </details>
-   <details>
-    <summary>Pregunta 4</summary>
-    <p>respuesta</p>
-  </details>
 </div>
 </div>
 </div>
