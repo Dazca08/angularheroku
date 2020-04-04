@@ -1,8 +1,5 @@
 import { Component, OnInit ,ViewChild} from '@angular/core';
-<<<<<<< HEAD:src/app/componentes/eventos/administrador/agregar/agregar.component.ts
 
-=======
->>>>>>> 583e0f91b86b86cdd0565e4ab9d49ea2e804a1c1:src/app/pages/eventos/agregar/agregar.component.ts
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Evento } from '../inicio-a/evento.model';
