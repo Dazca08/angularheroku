@@ -44,7 +44,6 @@ import { ServicioLService } from './componentes/preguntas-frecuentes/servicio-l.
 
 
 import { PictogramasComponent } from './componentes/pictogramas/pictogramas.component';
-import { SubscripcionesComponent } from './componentes/subscripciones/subscripciones.component';
 import { InicioPComponent } from './componentes/preguntas-frecuentes/administrador/inicio-p/inicio-p.component';
 import { AgregarPComponent } from './componentes/preguntas-frecuentes/administrador/agregar-p/agregar-p.component';
 import { EditarPComponent } from './componentes/preguntas-frecuentes/administrador/editar-p/editar-p.component';
@@ -65,6 +64,11 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { AvatarSelectorComponent } from './componentes/Usuarios/administrador/avatar-selector/avatar-selector.component';
 import { ImgServerPipe } from './pipes/img-server.pipe';
 import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
+import { VerSubscripcionesComponent } from './componentes/subscripciones/ver-subscripciones/ver-subscripciones.component';
+import { EditarSubscripcionesComponent } from './componentes/subscripciones/editar-subscripciones/editar-subscripciones.component';
+import { InsertSubscripcionesComponent } from './componentes/subscripciones/insert-subscripciones/insert-subscripciones.component';
+import { ServicioSubService } from './componentes/subscripciones/servicio-sub.service';
+import { FiltroSubscripcionesPipe } from './pipes/filtro-subscripciones.pipe';
 @NgModule({
   declarations: [
 
@@ -86,7 +90,7 @@ import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
     AgregarComponent,
     EditarComponent,
     PictogramasComponent,
-    SubscripcionesComponent,
+    
     InicioPComponent,
     AgregarPComponent,
     EditarPComponent,
@@ -103,6 +107,11 @@ import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
     AvatarSelectorComponent,
     ImgServerPipe,
     FiltroCorreoPipe,
+    VerSubscripcionesComponent,
+    EditarSubscripcionesComponent,
+    InsertSubscripcionesComponent,
+    FiltroSubscripcionesPipe
+    
 
   ],
   imports: [
@@ -119,7 +128,7 @@ import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
   providers: [ ServicioEventoService , ServicioInfoService , 
   ServicioAdminService,ServiciologinService
  ,ServicioLService ,ServiciocService , ServiciopiService,
- ServicioUService],
+ ServicioUService, ServicioSubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

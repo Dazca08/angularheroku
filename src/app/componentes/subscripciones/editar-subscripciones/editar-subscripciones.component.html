@@ -1,0 +1,132 @@
+<header id="main-header" class="py-2 bg-info text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>
+             Editar Pictograma
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <form #editarsubForm="ngForm" (ngSubmit)="guardar(editarsubForm)">
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <a routerLink="/ver_subscripciones" class="btn btn-light btn-block">
+                 Regresar al Inicio
+              </a>
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-success btn-block">
+                 Guardar cambios
+              </button>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+    
+      <section id="details">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Editar </h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="subscripcion">Subscripcion:</label>
+                        <input
+                            type="text" 
+                            name="subscripcion" 
+                            class="form-control" 
+                            #subscripcion="ngModel" 
+                            [(ngModel)]="editarsub.subscripcion"
+                            [ngClass]="{'is-invalid': subscripcion.errors && subscripcion.touched}" 
+                            required minlength="2"
+                        >
+                        <div 
+                            [hidden]="!subscripcion.errors?.required" 
+                            class="invalid-feedback">
+                            Nombre requerido
+                        </div>
+                        <div 
+                            [hidden]="!subscripcion.errors?.minlength" 
+                            class="invalid-feedback">
+                            Debe contener al menos 2 caracteres
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="contenidoSubscripcion">Contenido:</label>            
+                        <input 
+                            type="text" 
+                            name="contenidoSubscripcion" 
+                            class="form-control" 
+                            #contenidoSubscripcion="ngModel" 
+                            [(ngModel)]="editarsub.contenidoSubscripcion"
+                            [ngClass]="{'is-invalid': contenidoSubscripcion.errors && contenidoSubscripcion.touched}"
+                        >
+                        <div 
+                            [hidden]="!contenidoSubscripcion.errors?.required"
+                            class="invalid-feedback">
+                            Contenido requerido
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="valorSubscripcion">Valor:</label>
+                        <input 
+                            type="text" 
+                            name="precio" 
+                            class="form-control"
+                            #valorSubscripcion="ngModel" 
+                            [(ngModel)]="editarsub.valorSubscripcion"
+                            [ngClass]="{'is-invalid': valorSubscripcion.errors && valorSubscripcion.touched}" 
+                            required minlength="2"
+                        >
+                        <div [hidden]="!valorSubscripcion.errors?.required" class="invalid-feedback">
+                            precio requerido
+                        </div>
+                        <div [hidden]="!valorSubscripcion.errors?.minlength" class="invalid-feedback">
+                            Debe contener al menos 2 caracteres
+                        </div>                            
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="imagen_Subscripcion">Imagen::</label>
+                        <input
+                            type="text" 
+                            name="imagen_Subscripcion" 
+                            class="form-control" 
+                            #imagen_Subscripcion="ngModel" 
+                            [(ngModel)]="editarsub.imagen_Subscripcion"
+                            [ngClass]="{'is-invalid': imagen_Subscripcion.errors && imagen_Subscripcion.touched}" 
+                            required minlength="2"
+                        >
+                        <div 
+                            [hidden]="!imagen_Subscripcion.errors?.required" 
+                            class="invalid-feedback">
+                            Nombre requerido
+                        </div>
+                        <div 
+                            [hidden]="!imagen_Subscripcion.errors?.minlength" 
+                            class="invalid-feedback">
+                            Debe contener al menos 2 caracteres
+                        </div>
+                    </div>            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+
+  </form>
+ 

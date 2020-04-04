@@ -21,7 +21,6 @@ import { AgregarPComponent } from './componentes/preguntas-frecuentes/administra
 import { EditarPComponent } from './componentes/preguntas-frecuentes/administrador/editar-p/editar-p.component';
 
 import { PictogramasComponent } from './componentes/pictogramas/pictogramas.component';
-import { SubscripcionesComponent } from './componentes/subscripciones/subscripciones.component';
 
 import { IniciocComponent } from './componentes/cabana/administrador/inicioc/inicioc.component';
 import { EditarcComponent } from './componentes/cabana/administrador/editarc/editarc.component';
@@ -34,6 +33,9 @@ import { AgregarpiComponent } from './componentes/puntosInteres/administrador/ag
 import { InicioUComponent } from './componentes/Usuarios/administrador/inicio-u/inicio-u.component';
 import { EditarUComponent } from './componentes/Usuarios/administrador/editar-u/editar-u.component';
 import { AgregarUComponent } from './componentes/Usuarios/administrador/agregar-u/agregar-u.component';
+import { VerSubscripcionesComponent } from './componentes/subscripciones/ver-subscripciones/ver-subscripciones.component';
+import { InsertSubscripcionesComponent } from './componentes/subscripciones/insert-subscripciones/insert-subscripciones.component';
+import { EditarSubscripcionesComponent } from './componentes/subscripciones/editar-subscripciones/editar-subscripciones.component';
 
 const routes: Routes = [
 
@@ -52,7 +54,6 @@ const routes: Routes = [
 {path:'agregarpf',component:AgregarPComponent},
 {path:'editarpf/:id',component:EditarPComponent},
 {path:'pictogramas',component:PictogramasComponent},
-{path:'subscripciones',component:SubscripcionesComponent},
 {path:'inicioc',component:IniciocComponent},
 {path:'agregarc',component:AgregarcComponent},
 {path:'editarc/:id',component:EditarcComponent},
@@ -61,7 +62,11 @@ const routes: Routes = [
 {path:'editarpi/:id',component:EditarpiComponent},
 {path:'iniciou',component:InicioUComponent},
 {path:'agregaru',component:AgregarUComponent},
-{path:'editaru/:id',component:EditarUComponent}
+{path:'editaru/:id',component:EditarUComponent},
+
+{path: 'ver_subs', component:VerSubscripcionesComponent},
+{path:'insert_subs', component:InsertSubscripcionesComponent},
+{path:'editar_subs/:id',component:EditarSubscripcionesComponent}
 
 ];
 

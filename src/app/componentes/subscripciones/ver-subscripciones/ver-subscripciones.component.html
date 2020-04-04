@@ -1,0 +1,111 @@
+
+<!--
+	AUTOR: GABRIEL ZAPATA
+	COMPONENTE HTML QUE CONTIENE LA VISTA INICIAL DE LA GESTION DE SUBSCRIPCIONES
+	FECHA 24/03/2020  
+-->
+
+<app-cabecero-administrador></app-cabecero-administrador>
+   
+
+<header id="main-header" class="py-2 bg-info text-white">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-6">
+		  <h1>
+			 	Gestion de Subscripciones
+		  </h1>
+		  <div class="form-group">
+				   <input type="text" class="form-control" name="filtroSubscripcionesPost" placeholder="Escriba la subscripcion..." [(ngModel)]="filtroSubscripcionesPost">
+			   </div>
+		</div>
+	  </div>
+	</div>
+  </header>
+ 
+
+<div><br><br></div>
+
+<section>
+
+    <div align = "center">
+
+        <div class = "boton" > <!--div>style="margin-left: 25%;"-->
+            <a class="letra" href="/insert_subs" role="button">Agregar</a>                             
+        </div>
+       <br>
+    </div>
+  
+</section>
+
+
+
+<section id ="Subscripciones">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="card">
+					<h4 text-align =center>LISTADO DE SUBSCRIPCIONES</h4>
+
+				</div>
+				<div>
+					<div class="table-responsive ">
+						<table class="table  table-bordered table-striped">
+							<thead class="thead-dark">
+								<tr>
+										<th>#</th>
+										<th>Subscripcion</th>
+										<th>Contenido</th>
+										<th>Valor</th>
+										
+										<th>Editar</th>
+										<th>Eliminar</th>
+										<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let sub of subs |filtroSubscripciones:filtroSubscripcionesPost | paginate:{itemsPerPage :5 , currentPage:PageActual}  ; index as i">
+									<td>{{i+1}}</td>
+									<td>{{sub.subscripcion}}</td>                            							 
+									<td>{{sub.contenidoSubscripcion}}</td>
+									<td>${{sub.valorSubscripcion}}</td> 
+																	
+									<td><div> <a class="letra" routerLink="/editar_subs/{{sub.id}}">Editar</a></div></td>													-->
+									<td><div> <a class="letra" href="/" role="button">Eliminar</a></div></td>
+									<td></td>
+									
+									
+								</tr>
+							</tbody>
+						</table>
+						<pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
+					</div> 
+					<br><br>
+
+				</div>
+			</div>	
+				<div class="col-md-3">
+					<div class="card text-center bg-black text-black mb-3">
+						<div class="card-body">						
+							<img src="assets/imagenes/u2.jpg" class="card-img-top" width="100" height="200" >
+							<div class="container">
+								<div align="center">
+									<a class="boton" href="/insert_subs" role="button">Agregar Nuevo</a>
+								</div>
+							</div>								
+						</div>
+					</div>
+				
+			</div>	
+
+		</div>
+	</div>
+
+</section>
+
+<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+
+
+
+
+
