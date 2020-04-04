@@ -37,11 +37,12 @@ usuarios: Usuarios[];
  
  
   agregar({value, valid}: {value:Usuarios, valid: boolean}){
+    console.log(this.usuario.RolId);
    console.log(this.usuario.CorreoElectronico);
    if(this.usuario.Nombre=='' || this.usuario.Apellido=='' 
       ||this.usuario.TipoDocumento=='' || this.usuario.NumeroDocumento==''
       ||this.usuario.LugarExpedicion=='' || this.usuario.CorreoElectronico==''
-      ||this.usuario.Clave==''
+      ||this.usuario.Clave==''||this.usuario.VerificacionCuenta==''||this.usuario.EstadoCuenta==''
       ){
       console.log(this.usuario.Nombre);
             Swal.fire(
@@ -50,13 +51,15 @@ usuarios: Usuarios[];
   'error'
 )
     }
-    else if(this.usuario.RolId=='0'){
+    else if(this.usuario.RolId==''){
                   Swal.fire(
   'Por favor llene todos los campos!',
   'Usuario no  Agregado!',
   'error'
-) 
+  ) 
+     
     }
+
     else if(this.usuario.Icono_url==''){
                     Swal.fire(
   'Por favor seleccione un icono para el usuario!',
@@ -68,11 +71,24 @@ usuarios: Usuarios[];
  
       console.log(value);
       this.servi.insertar(value);
-      this.usuarioForm.reset();
+      this.limpiar();
     }
 
   }
-
+  public limpiar(){
+ this.usuario.Nombre="";
+  this.usuario.Apellido= "";
+    this.usuario.TipoDocumento="";
+    this.usuario.NumeroDocumento="";
+     this.usuario.LugarExpedicion="";
+    this.usuario.CorreoElectronico="";
+    this.usuario.Clave="";
+    this.usuario.Icono_url="";
+     this.usuario.VerificacionCuenta="";
+      this.usuario.EstadoCuenta="";
+       this.usuario.RolId="";
+    this.Router.navigateByUrl('/agregaru');
+  }
   ngOnInit(): void {
 
   }

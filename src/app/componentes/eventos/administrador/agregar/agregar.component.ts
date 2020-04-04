@@ -1,5 +1,5 @@
 import { Component, OnInit ,ViewChild} from '@angular/core';
-//import { FlashMessagesService } from 'angular2-flash-messages';
+
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Evento } from 'src/app/componentes/eventos/administrador/inicio-a/evento.model';
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent implements OnInit {
-k:string='soy k :v';
+//definicion de variables que almacenaran los datos 
 eventos: Evento[];
   evento: Evento ={
     Nombre: '',
@@ -19,25 +19,38 @@ eventos: Evento[];
      Fecha: '',
     Descripcion: '',
      Calificacion: '',
-    ImagenesUrl: this.k,
+    ImagenesUrl: '',
      ComentariosId: '',
     ListaComentariosEvento: '',
     
    
   }
- @ViewChild("eventoForm") eventoForm:FormGroup;
+  //se trae el formulario y se igual a form group
+ @ViewChild('eventoForm') formValues;
+ //variables para la carga de imagenes
     public respuestaImagenEnviada;
     public resultadoCarga;
-   
-  constructor(private formBuilder: FormBuilder,
-      private servi: ServicioEventoService ,
-      Router: Router  ) { }
-
-agregar({value, valid}: {value: Evento, valid: boolean}){
- console.log(this.evento.ImagenesUrl)
-console.log(this.selectedfile)
+   //se define el constructor
+  constructor(private formBuilder: FormBuilder, private servi: ServicioEventoService ,
+private Router: Router  ) { }
+  //se define la variable que va a almacenar la imagen a traer
+selectedfile:File=null;
+//funcion que detecta cuando se selecciona la imagen
+onFileSelected(evento){
+  
+//se asigna el valor del archivo entrante a la variable selectedfiles
+  this.selectedfile=<File>evento.target.files[0];
+//se le asigna el campo de nombre del archivo o en este caso la imagen a la variable 
+//evento en su campo ImagenesUrl 
 this.evento.ImagenesUrl=this.selectedfile.name.toString();
- console.log(this.evento.ImagenesUrl)
+
+
+}
+//funcion donde se agrega los valores del formulario , recibe un valor de tipo evento 
+//el cual contendra el modelo de eventos , es decir todas la variables que lo componen
+agregar({value}: {value: Evento}){
+
+//validaciones
  if(this.evento.Fecha ==""){
    console.log('error');
   console.log('error seleccione una Fecha');
@@ -55,6 +68,7 @@ this.evento.ImagenesUrl=this.selectedfile.name.toString();
   'error'
 )
  }
+ 
  else if(this.evento.Calificacion=='' || this.evento.Descripcion=='' || this.evento.Nombre==''){
    console.log('llene todos los campos')
              Swal.fire(
@@ -73,28 +87,46 @@ this.evento.ImagenesUrl=this.selectedfile.name.toString();
 
 
  else{
+   //se inserta el formulario
 this.servi.insertar(value)
+//se inserta la imagen
 this.cargandoImagen();
                    Swal.fire(
   'Evento agregado con exito!',
   'Evento Agregado!',
   'success'
 )
-    this.eventoForm.reset();
+    //vuelve el formulario a 0
+    ///this.eventoForm.reset();
+    //this.formValues.resetForm();
+    this.limpiaFormulario();
+    this.selectedfile=null;
+
+    console.log(this.evento)
+    console.log(this.selectedfile)
 
 }
  
 //this.eventoForm.resetForm();
   }
-selectedfile:File=null;
 
-onFileSelected(evento){
-  console.log(this.k)
-this.selectedfile=<File>evento.target.files[0];
-this.k=this.selectedfile.name.toString();
-console.log("new k "+this.k)
+public limpiaFormulario(){
+
+ 
+this.evento.Nombre='';
+  this.evento.FechaPublicacion= Date.now().toString();
+    this.evento.Fecha="";
+    this.evento.Descripcion="";
+     this.evento.Calificacion="";
+    this.evento.ImagenesUrl="";
+    this.evento.ComentariosId="";
+    this.evento.ListaComentariosEvento="";
+    this.Router.navigateByUrl('/agregarevento');
+//this.Router.navigateByUrl('/inicioeventos');
+   
+  
+
 }
-
 
    public cargandoImagen(){
     

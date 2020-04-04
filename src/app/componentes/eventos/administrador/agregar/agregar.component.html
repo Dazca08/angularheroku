@@ -36,14 +36,15 @@
           <div class="form-group">
                 <label for="nombre"> Ingrese el Nombre del evento</label>
                 <input type="text" name="nombre" class="form-control" #nombre="ngModel" [(ngModel)]="evento.Nombre"
-                  [ngClass]="{'is-invalid': nombre.errors && nombre.touched}" required minlength="2">
-                <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
+                  >
+                </div>
+                <!--<div [hidden]="!nombre.errors?.required" class="invalid-feedback">
                   Nombre requerido
                 </div>
                 <div [hidden]="!nombre.errors?.minlength" class="invalid-feedback">
                   Debe contener al menos 2 caracteres
                 </div>
-              </div>
+              </div>-->
 
             <!--  <div class="form-group">
                 <label for="  FechaPublicacion">Fecha de publicacion</label>
@@ -61,10 +62,9 @@
               <div class="form-group">
                 <label for="Fecha">Ingrese la Fecha en la que se realizara el evento</label>
                 <input type="date" name="Fecha" class="form-control" #Fecha="ngModel" [(ngModel)]="evento.Fecha"
-                  [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched}">
-                <div [hidden]="!Fecha.errors?.required" class="invalid-feedback">
-                  Fecha requerida
-                </div>
+                >
+             
+
                
               </div>
 
@@ -73,13 +73,8 @@
               <div class="form-group">
                 <label for="  Descripcion">Descripcion</label>
                 <input type="text" name="Descripcion" class="form-control" #Descripcion="ngModel" [(ngModel)]="evento.Descripcion"
-                  [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched}" required minlength="10">
-                <div [hidden]="!Descripcion.errors?.required" class="invalid-feedback">
-                  Decripcion requerida
-                </div>
-                <div [hidden]="!Descripcion.errors?.minlength" class="invalid-feedback">
-                  Debe contener al menos 10 caracteres
-                </div>
+                  >
+             
               </div>
 
 
