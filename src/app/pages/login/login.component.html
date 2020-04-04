@@ -1,0 +1,39 @@
+<app-cabecero></app-cabecero>
+<div class="row mt-5 justify-content-center">
+  <div class="col-md-4 col-sm-8">
+    <div class="card">
+      <div class="card-header">
+        <b class="text-muted">INICIAR SESIÓN</b>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formLogin" (ngSubmit)="login()">
+          <div class="form-group">
+            <b class="text-muted">Correo Electrónico</b>
+            <input type="text" [ngClass]="getValidationClass('correo')" formControlName="correo" class="form-control">
+            <div class="valid-feedback">Ok!</div>
+            <div class="invalid-feedback">
+              <span *ngIf="correo.errors?.required">
+                  El correo es requerido
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <b class="text-muted">Contraseña</b>
+            <input type="password" [ngClass]="getValidationClass('clave')" formControlName="clave" class="form-control">
+            <div class="valid-feedback">Ok!</div>
+            <div class="invalid-feedback">
+              <span *ngIf="clave.errors?.required">La contraseña es requerida</span>
+              <span *ngIf="clave.errors?.minlength">
+                La contraseña debe tener mínimo {{ clave.errors?.minlength.requiredLength }}
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group text-center">
+            <button [disabled]="formLogin.invalid" type="submit" class="btn btn-outline-success">INGRESAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
