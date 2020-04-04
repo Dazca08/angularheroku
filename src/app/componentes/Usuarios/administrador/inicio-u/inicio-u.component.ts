@@ -60,6 +60,7 @@ console.log(JSON.stringify(error));
   
   }
   eliminar(id){
+
     Swal.fire({
   title: 'Esta seguro?',
   text: "Al eliminar un usuario no se podra recuperar!",
@@ -91,6 +92,7 @@ this.Router.navigateByUrl('/iniciou');*/
    
   
 }
+
 refrescar(id){
    console.log(id);
      this.servi.Eliminar(id);

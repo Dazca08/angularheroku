@@ -69,6 +69,9 @@ import { EditarSubscripcionesComponent } from './componentes/subscripciones/edit
 import { InsertSubscripcionesComponent } from './componentes/subscripciones/insert-subscripciones/insert-subscripciones.component';
 import { ServicioSubService } from './componentes/subscripciones/servicio-sub.service';
 import { FiltroSubscripcionesPipe } from './pipes/filtro-subscripciones.pipe';
+import { FilternPipe } from './pipes/filtern.pipe';
+import { FiltroNPipe } from './pipes/filtro-n.pipe';
+import {ImageUploadModule} from 'angular2-image-upload';
 @NgModule({
   declarations: [
 
@@ -112,6 +115,8 @@ import { FiltroSubscripcionesPipe } from './pipes/filtro-subscripciones.pipe';
     InsertSubscripcionesComponent,
     FiltroSubscripcionesPipe
     
+    FilternPipe,
+    FiltroNPipe,
 
   ],
   imports: [
@@ -121,7 +126,8 @@ import { FiltroSubscripcionesPipe } from './pipes/filtro-subscripciones.pipe';
     CalendarModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ImageUploadModule
     // FlashMessagesModule
      //HttpModule
   ],
