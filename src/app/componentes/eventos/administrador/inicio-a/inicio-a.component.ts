@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./inicio-a.component.css']
 })
 export class InicioAComponent implements OnInit {
+
 eventos: Evento[];
   evento: Evento ={
     Nombre: '',
@@ -23,8 +24,13 @@ eventos: Evento[];
 
    
   }
- constructor(private servi:ServicioEventoService) {  this.ObtenerEventos}
 
+ constructor(private servi:ServicioEventoService) {  this.ObtenerEventos}
+   PageActual:number=1;
+    filterEvento ='';
+ if(PageActual=0){
+   PageActual=1;
+ }
 
   ObtenerEventos(){
  this.servi.ObtenerJson().subscribe(resultado =>{
@@ -40,38 +46,40 @@ console.log(JSON.stringify(error));
    }
   ngOnInit(): void {
   	this.ObtenerEventos();
+    console.log(this.PageActual);
   }
+
+
     eliminar(id){
  
-  this.refrescar(id);
-  this.refrescar(id);
- /*console.log(id);
-     this.servi.Eliminar(id);
- this.usuarios=this.usuarios.filter(x=>x.Id==id);
- this.ObtenerUsuarios();
 
-this.Router.navigateByUrl('/iniciou');*/
-   
-  
-}
-refrescar(id){
        Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
+  title: 'Estas seguro?',
+  text: "El evento no se podra recuperar!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Si, Borrar!'
 }).then((result) => {
   if (result.value) {
     Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
+      'Borrado!',
+      'El evento ha sido eliminado',
       'success'
     )
+
+      this.refrescar(id);
+  this.refrescar(id);
+
   }
 })
+
+   
+  
+}
+refrescar(id){
+ 
    console.log(id);
      this.servi.Eliminar(id);
  //this.usuarios=this.usuarios.filter(x=>x.Id==id);

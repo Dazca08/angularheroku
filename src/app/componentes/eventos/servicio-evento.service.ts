@@ -13,6 +13,7 @@ const httpOptions =
 export class ServicioEventoService {
 constructor(private http: HttpClient) { }
  private url: string = "http://piedrasdeltunjo.tk/Eventos";
+ private url2: string = "http://piedrasdeltunjo.tk/";
   ObtenerJson():Observable<any>{
  return this.http.get(this.url)
   }
@@ -26,7 +27,7 @@ getu(id):Observable<any>{
   async update(cadena,id): Promise<any> {
 
     return new Promise((resolve, reject) => {
-      this.http.put(this.url+'/'+id, cadena, httpOptions).toPromise()
+      this.http.put(this.url+'/'+id,cadena, httpOptions).toPromise()
     });
   }
 
@@ -45,5 +46,13 @@ async insertar(Datos): Promise<any> {
  console.log(reject);
     });
   }
+    public postFileImagen(imagenParaSubir: File){
+
+    const formData = new FormData(); 
+    formData.append('imagenPropia', imagenParaSubir, imagenParaSubir.name); 
+    return this.http.post(this.url2 +"images/uploadImage?tipo=evento", formData);
+
+  }
+
 
 }

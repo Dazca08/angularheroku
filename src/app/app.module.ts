@@ -65,6 +65,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { AvatarSelectorComponent } from './componentes/Usuarios/administrador/avatar-selector/avatar-selector.component';
 import { ImgServerPipe } from './pipes/img-server.pipe';
 import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
+import { FilternPipe } from './pipes/filtern.pipe';
+import { FiltroNPipe } from './pipes/filtro-n.pipe';
+import {ImageUploadModule} from 'angular2-image-upload';
 @NgModule({
   declarations: [
 
@@ -103,6 +106,8 @@ import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
     AvatarSelectorComponent,
     ImgServerPipe,
     FiltroCorreoPipe,
+    FilternPipe,
+    FiltroNPipe,
 
   ],
   imports: [
@@ -112,7 +117,8 @@ import { FiltroCorreoPipe } from './pipes/filtro-correo.pipe';
     CalendarModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ImageUploadModule
     // FlashMessagesModule
      //HttpModule
   ],

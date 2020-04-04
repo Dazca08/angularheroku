@@ -18,7 +18,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a routerLink="/inicioaPf" class="btn btn-light btn-block">
+          <a routerLink="/inicioaPf" class="btn btn-dark text-white btn-block">
              Regresar al Inicio
           </a>
         </div>
@@ -27,11 +27,7 @@
              Guardar cambios
           </button>
         </div>
-        <!--<div class="col-md-3">
-          <a href="/inicioaPf"   (click)="eliminar()" class="btn btn-danger btn-block">
-             Eliminar Pregunta
-          </a>
-        </div>-->
+       
       </div>
     </div>
   </section>
@@ -39,10 +35,10 @@
   <section id="details">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-md-6 mx-auto">
           <div class="card">
             <div class="card-header">
-              <h4>Editar </h4>
+              <h4>En este formulario podra editar la pregunta seleccionada </h4>
             </div>
             <div class="card-body">
               <div class="form-group">
@@ -60,12 +56,12 @@
               <div class="form-group">
                 <label for="descripcion">Decripcion</label>
                 <input type="text" name="descripcion" class="form-control" #descripcion="ngModel" [(ngModel)]="pregunta.descripcion"
-                  [ngClass]="{'is-invalid': descripcion.errors && descripcion.touched}" required minlength="2">
+                  [ngClass]="{'is-invalid': descripcion.errors && descripcion.touched}" required minlength="10">
                 <div [hidden]="!descripcion.errors?.required" class="invalid-feedback">
                   Decripcion requerida
                 </div>
                 <div [hidden]="!descripcion.errors?.minlength" class="invalid-feedback">
-                  Debe contener al menos 2 caracteres
+                  Debe contener al menos 10 caracteres
                 </div>
               </div>
 

@@ -3,6 +3,7 @@ import { Pregunta } from './pregunta.model';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { ServicioLService } from 'src/app/componentes/preguntas-frecuentes/servicio-l.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inicio-p',
   templateUrl: './inicio-p.component.html',
@@ -19,7 +20,7 @@ preguntas: Pregunta[];
   }
     constructor(private servi:ServicioLService) {  this.ObtenerPreguntas}
 PageActual:number=1;
-
+filterPregunta='';
   ObtenerPreguntas(){
  this.servi.ObtenerJson().subscribe(resultado =>{
    this.preguntas=resultado;
@@ -36,8 +37,27 @@ console.log(JSON.stringify(error));
   	this.ObtenerPreguntas();
   }
    eliminar(id){
-  this.refrescar(id);
-  this.refrescar(id);
+    Swal.fire({
+  title: 'Esta seguro?',
+  text: "Al eliminar una pregunta no se podra recuperar!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Borrar!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+
+      'Borrado!',
+      'La pregunta ha sido eliminado.',
+      'success'
+     
+    )
+      this.refrescar(id);
+       this.refrescar(id);
+  }
+})
  /*console.log(id);
      this.servi.Eliminar(id);
  this.usuarios=this.usuarios.filter(x=>x.Id==id);

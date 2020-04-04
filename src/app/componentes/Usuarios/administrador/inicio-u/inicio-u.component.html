@@ -8,12 +8,13 @@
            Inicio Usuarios
         </h1>
         <div class="form-group">
-		 		<input type="text" class="form-control" name="filterPost" placeholder="Buscar...." [(ngModel)]="filterPost">
+		 		<input type="text" class="form-control" name="filterPost" placeholder="Buscar usuario por numero de documento ..." [(ngModel)]="filterPost">
 		 	</div>
       </div>
     </div>
   </div>
 </header>
+<body  >
 <br><br>
 <section id ="Usuarios" >
 <div class="container" align="center" >
@@ -32,7 +33,7 @@
 		 		<input type="text" class="form-control" name="filterPost" placeholder="Buscar...." [(ngModel)]="filterPost">
 		 	</div>-->
 		 		<div class="table-responsive ">
-		 		<table class="table  table-bordered table-striped"    >
+		 		<table class="table  table-bordered table-striped"  style="background-color:white;"  >
 		 			<thead class="thead-dark">
 		 				<tr>
 		 					<th>editar</th>
@@ -113,12 +114,8 @@
 		<div class="col-md-3">
         <div class="card text-center bg-white text-white mb-3">
           <div class="card-body">
-          <!--  <h3>Saldo Total</h3>
-            <h4 class="display-4">
-              {{getSaldoTotal() | currency:'MNX':'$'}}
-
-            </h4>-->
-            <img src="assets/imagenes/u2.jpg" class="card-img-top" width="100" height="200" >
+      
+            <img src="assets/imagenes/u2.jpg" class="card-img-top" width="150" height="150" >
       <div class="container">
         <div align="center">
 	<a class="btn btn-primary" href="/agregaru" role="button">Nuevo Usuario</a>
@@ -145,11 +142,9 @@
 
 
 </section>
-<br><br>
-<section>
-	
 
 
+</body>
 
   
 

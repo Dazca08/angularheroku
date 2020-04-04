@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 import { ServicioLService } from 'src/app/componentes/preguntas-frecuentes/servicio-l.service';
 import { Router , ActivatedRoute} from '@angular/router';
 import { Pregunta } from 'src/app/componentes/preguntas-frecuentes/administrador/inicio-p/pregunta.model';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-editar-p',
   templateUrl: './editar-p.component.html',
@@ -30,12 +31,43 @@ export class EditarPComponent implements OnInit {
  });
   }
    guardar({value, valid}: {value: Pregunta, valid: boolean}){
-   
+      if(this.pregunta.nombre=='' || this.pregunta.descripcion==''){
+            Swal.fire(
+  'Por favor llene todos los campos!',
+  'Pregunta no  Editada!',
+  'error'
+)
+      }
+      else{
+          Swal.fire({
+  title: 'Esta seguro?',
+  text: "Desea guardar los cambios?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, guardar!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+
+      'Guardado!',
+      'El usuario ha sido Actualizado ',
+      'success'
+     
+    )
    
       value.id = this.id;
       
    this.servi.update(value,this.id);  
-    this.servi.ObtenerJson();
+ 
+  }
+})
+
+
+
+      }
+  
       //this.route.navigate(['/']);
     
   }

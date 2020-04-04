@@ -7,21 +7,25 @@
         <h1>
            Inicio Eventos
         </h1>
+         <div class="form-group">
+		 		<input type="text" class="form-control" name="filterEvento" placeholder="Buscar Evento por nombre ..." [(ngModel)]="filterEvento">
+		 	</div>
       </div>
     </div>
   </div>
 </header>
 
+<br><br>
 <section id ="eventos">
-
+<div class="container" align="center" >
 		<div class="row">
 		 <div class="col-md-9">
 		 	<div class="card">
 		 		<h4>listado de Eventos</h4>
 
 		 	</div>
-		 	<div>
-		 		<table class="table table-striped">
+		 	<div class="table-responsive ">
+		 		<table class="table  table-bordered table-striped"  style="background-color:white;">
 		 			<thead class="thead-dark">
 		 				<tr>
 		 					<th>editar</th>
@@ -42,7 +46,7 @@
 		 				</tr>
 		 			</thead>
 		 			<tbody>
-		 				 <tr *ngFor="let evento of eventos; let i =index">
+		 				 <tr *ngFor="let evento of eventos |filtroN:filterEvento | paginate:{itemsPerPage :5 , currentPage:PageActual}; let i =index">
 		 				 	 	 <td>
                   <a routerLink="/editarevento/{{evento.Id}}" class="btn btn-secondary">
                    Editar
@@ -71,26 +75,43 @@
 		 				 </tr>
 		 			</tbody>
 		 		</table>
+		 		<pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
 		 	</div>
 		 
 		</div>
-	</div>
 
+		<div class="col-md-3">
+        <div class="card text-center bg-white text-white mb-3">
+          <div class="card-body">
+      
+            <img src="assets/imagenes/4.jpg" class="card-img-top" width="150" height="150" >
+      <div class="container">
+        <div align="center">
+	<a class="btn btn-primary" href="/agregarevento" role="button">Nuevo Evento</a>
+</div>
+  </div>
+
+
+          </div>
+        </div>
+
+        <div class="card text-center bg-white text-black mb-3">
+          <div class="card-body">
+            <h3>Total de eventos</h3>
+            <h4 class="display-4">
+              <!--<i class="fas fa-users"></i> {{clientes?.length}}-->
+          {{eventos?.length}}
+          
+            </h4>
+          </div>
+        </div>
+      </div>
+	</div>
+</div>
 </section>
 
 <section>
-	 <div align="center">
-<section id="actions" class="py-6 mb-6 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <a class="btn btn-primary" href="/agregarevento" role="button">Nuevo Evento</a>
-        
-      </div>
-    </div>
-  </div>
-</section>
-</div>   
+ 
 
   
 
