@@ -29,6 +29,7 @@ import { ServiciologinService} from './componentes/login/serviciologin.service';
 
 import { HttpClientModule } from '@angular/common/http';
 //import { HttpModule } from '@angular/common/http';
+//import {Puntosinteres} from './componentes/puntos-interes/puntos-interes.component';
 
 
 import { PreguntasFrecuentesComponent } from './componentes/preguntas-frecuentes/preguntas-frecuentes.component';
