@@ -113,8 +113,7 @@ import {ImageUploadModule} from 'angular2-image-upload';
     VerSubscripcionesComponent,
     EditarSubscripcionesComponent,
     InsertSubscripcionesComponent,
-    FiltroSubscripcionesPipe
-    
+    FiltroSubscripcionesPipe,
     FilternPipe,
     FiltroNPipe,
 
